@@ -1,0 +1,22 @@
+[package]
+name = "rust_crud_api"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-web = "4.5.1"
+serde = { version = "1.0.197", features = ["derive"] }
+serde_json = "1.0.115"
+dotenvy = "0.15.7"
+env_logger = "0.11.3"
+
+# Diesel for synchronous operations (like CLI) and schema generation
+diesel = { version = "2.1.6", features = ["mysql", "serde_json", "with-bigdecimal"] }
+
+# Diesel-async for non-blocking database operations in Actix
+diesel-async = { version = "0.4.1", features = ["bb8", "mysql"] }
+
+# For handling DECIMAL types
+bigdecimal = { version = "0.4.3", features = ["serde"] }
